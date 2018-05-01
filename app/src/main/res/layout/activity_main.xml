@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="想要減重"
+            android:textColor="@android:color/background_dark"
+            android:textSize="24sp" />
+
+        <ImageButton
+            android:id="@+id/lossWeight"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@android:color/background_light"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/run" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="想要瘦小腹"
+            android:textColor="@android:color/background_dark"
+            android:textSize="24sp" />
+
+        <ImageButton
+            android:id="@+id/abdomen"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@android:color/background_light"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/abdomen" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="想練出結實不晃動的身體"
+            android:textColor="@android:color/background_dark"
+            android:textSize="24sp" />
+
+        <ImageButton
+            android:id="@+id/body"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@android:color/background_light"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/body" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="想增加踢力與腳力"
+            android:textColor="@android:color/background_dark"
+            android:textSize="24sp" />
+
+        <ImageButton
+            android:id="@+id/kick"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@android:color/background_light"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/kick" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="想增加投擲力"
+            android:textColor="@android:color/background_dark"
+            android:textSize="24sp" />
+
+        <ImageButton
+            android:id="@+id/throwball"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@android:color/background_light"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/throwball" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="想改善走樣的姿勢"
+            android:textColor="@android:color/background_dark"
+            android:textSize="24sp" />
+
+        <ImageButton
+            android:id="@+id/humpback"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@android:color/background_light"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/humpback" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="想改善腰痛"
+            android:textColor="@android:color/background_dark"
+            android:textSize="24sp" />
+
+        <ImageButton
+            android:id="@+id/waist"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@android:color/background_light"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/waist" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="想練出不容易疲倦的身體"
+            android:textColor="@android:color/background_dark"
+            android:textSize="24sp" />
+
+        <ImageButton
+            android:id="@+id/tiredd"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@android:color/background_light"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/tired" />
+
+    </LinearLayout>
+</ScrollView>
