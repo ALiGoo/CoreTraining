@@ -84,9 +84,9 @@ public class Training extends AppCompatActivity {
                     gif.setImageResource(Item.gif[itemNum[number] - 1]);
                     name.setText(Item.item[itemNum[number] - 1][0]);
                     tts.stop();
-                    if (TrainingProgram.grade == 1 || itemNum[number] <= 10) {
+                    if (MainActivity.grade == 1 || itemNum[number] <= 10) {
                         tts.speak(Item.item[itemNum[number] - 1][0] + Item.item[itemNum[number] - 1][1] + Item.item[itemNum[number] - 1][2], TextToSpeech.QUEUE_FLUSH, null);
-                    } else if (TrainingProgram.grade == 2) {
+                    } else if (MainActivity.grade == 2) {
                         tts.speak(Item.item[itemNum[number] - 1][0] + Item.item[itemNum[number] - 1][1] + Item.item[itemNum[number] - 1][3], TextToSpeech.QUEUE_FLUSH, null);
                     } else {
                         tts.speak(Item.item[itemNum[number] - 1][0] + Item.item[itemNum[number] - 1][1] + Item.item[itemNum[number] - 1][4], TextToSpeech.QUEUE_FLUSH, null);

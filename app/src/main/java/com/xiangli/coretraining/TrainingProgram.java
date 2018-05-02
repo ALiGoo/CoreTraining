@@ -5,11 +5,8 @@ import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.util.Locale;
@@ -19,7 +16,6 @@ public class TrainingProgram extends AppCompatActivity {
     private final int[] itemId = {R.id.item1, R.id.item2, R.id.item3, R.id.item4, R.id.item5, R.id.item6, R.id.item7, R.id.item8,
             R.id.item9, R.id.item10, R.id.item11, R.id.item12, R.id.item13, R.id.item14, R.id.item15};
     private TextToSpeech tts;
-    public static int grade;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +35,6 @@ public class TrainingProgram extends AppCompatActivity {
             }
         });
 
-        setGrade();
         setItem(itemNum);
         start.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,32 +65,16 @@ public class TrainingProgram extends AppCompatActivity {
         for (int i = 0; i < itemName.length; i++) {
             itemName[i] = findViewById(itemId[i]);
             if (itemNum[i] != 0) {
-                itemName[i].setText(Item.item[itemNum[i] - 1][0] + "     " + Item.item[itemNum[i] - 1][2]);
+                if (MainActivity.grade == 1 || itemNum[i] <= 10) {
+                    itemName[i].setText(Item.item[itemNum[i] - 1][0] + "     " + Item.item[itemNum[i] - 1][2]);
+                } else if (MainActivity.grade == 2) {
+                    itemName[i].setText(Item.item[itemNum[i] - 1][0] + "     " + Item.item[itemNum[i] - 1][3]);
+                } else {
+                    itemName[i].setText(Item.item[itemNum[i] - 1][0] + "     " + Item.item[itemNum[i] - 1][4]);
+                }
+
             }
         }
     }
 
-    public void setGrade() {
-        Spinner spinner = findViewById(R.id.spinner);
-
-        ArrayAdapter adapter = ArrayAdapter.createFromResource(this, R.array.grade, R.layout.support_simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if (parent.getSelectedItem().toString() == "初級") {
-                    grade = 1;
-                } else if (parent.getSelectedItem().toString() == "中級") {
-                    grade = 2;
-                } else {
-                    grade = 3;
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                grade = 1;
-            }
-        });
-    }
 }

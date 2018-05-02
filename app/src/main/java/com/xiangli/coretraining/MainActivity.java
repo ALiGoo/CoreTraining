@@ -4,7 +4,11 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
     ImageButton humpBack;
     ImageButton waist;
     ImageButton tired;
+    Spinner spinner;
+    public static int grade;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
         humpBack = findViewById(R.id.humpback);
         waist = findViewById(R.id.waist);
         tired = findViewById(R.id.tiredd);
+
+        setGrade();
 
         lossWeight.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -168,5 +176,29 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("itemNum", itemNum);
         intent.putExtra("note", note);
         startActivity(intent);
+    }
+
+    public void setGrade() {
+        Spinner spinner = findViewById(R.id.spinner);
+
+        ArrayAdapter adapter = ArrayAdapter.createFromResource(this, R.array.grade, R.layout.support_simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (parent.getSelectedItem().toString().equals("初級")) {
+                    grade = 1;
+                } else if (parent.getSelectedItem().toString().equals("中級")) {
+                    grade = 2;
+                } else {
+                    grade = 3;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                grade = 1;
+            }
+        });
     }
 }
