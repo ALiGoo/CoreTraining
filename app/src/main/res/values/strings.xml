@@ -8,4 +8,5 @@
         <item>中級</item>
         <item>高級</item>
     </string-array>
+    <string name="title_activity_navigation__base">Navigation_BaseActivity</string>
 </resources>

@@ -8,14 +8,14 @@ import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ImageButton lossWeight;
-    private ImageButton abdomen;
-    private ImageButton body;
-    private ImageButton kick;
-    private ImageButton throwBall;
-    private ImageButton humpBack;
-    private ImageButton waist;
-    private ImageButton tired;
+    ImageButton lossWeight;
+    ImageButton abdomen;
+    ImageButton body;
+    ImageButton kick;
+    ImageButton throwBall;
+    ImageButton humpBack;
+    ImageButton waist;
+    ImageButton tired;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

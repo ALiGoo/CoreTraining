@@ -20,10 +20,9 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.jar.Manifest;
 
 public class Music extends AppCompatActivity {
-    private ListView listPlay;
+    ListView listPlay;
     private List<Map<String, String>> data;
     private MediaPlayer mediaPlayer;
 
