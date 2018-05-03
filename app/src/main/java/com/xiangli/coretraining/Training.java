@@ -22,6 +22,7 @@ public class Training extends AppCompatActivity {
     private ImageButton next;
     private GifImageView gif;
     private TextView name;
+    private TextView gradeNum;
     private int number = 1;
     private int tsec = 0, csec = 0, cmin = 0;
 
@@ -44,6 +45,8 @@ public class Training extends AppCompatActivity {
         next.setOnClickListener(setListener(itemNum));
         name = findViewById(R.id.name);
         name.setText(Item.item[itemNum[0] - 1][0]);
+        gradeNum = findViewById(R.id.gradeNum);
+        gradeNum.setText(Item.item[itemNum[0] - 1][2]);
         timer();
 
         tts = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
@@ -85,11 +88,17 @@ public class Training extends AppCompatActivity {
                     name.setText(Item.item[itemNum[number] - 1][0]);
                     tts.stop();
                     if (MainActivity.grade == 1 || itemNum[number] <= 10) {
-                        tts.speak(Item.item[itemNum[number] - 1][0] + Item.item[itemNum[number] - 1][1] + Item.item[itemNum[number] - 1][2], TextToSpeech.QUEUE_FLUSH, null);
+                        tts.speak(Item.item[itemNum[number] - 1][0] + Item.item[itemNum[number] - 1][1]
+                                + Item.item[itemNum[number] - 1][2], TextToSpeech.QUEUE_FLUSH, null);
+                        gradeNum.setText(Item.item[itemNum[number] - 1][2]);
                     } else if (MainActivity.grade == 2) {
-                        tts.speak(Item.item[itemNum[number] - 1][0] + Item.item[itemNum[number] - 1][1] + Item.item[itemNum[number] - 1][3], TextToSpeech.QUEUE_FLUSH, null);
+                        tts.speak(Item.item[itemNum[number] - 1][0] + Item.item[itemNum[number] - 1][1] +
+                                Item.item[itemNum[number] - 1][3], TextToSpeech.QUEUE_FLUSH, null);
+                        gradeNum.setText(Item.item[itemNum[number] - 1][3]);
                     } else {
-                        tts.speak(Item.item[itemNum[number] - 1][0] + Item.item[itemNum[number] - 1][1] + Item.item[itemNum[number] - 1][4], TextToSpeech.QUEUE_FLUSH, null);
+                        tts.speak(Item.item[itemNum[number] - 1][0] + Item.item[itemNum[number] - 1][1] +
+                                Item.item[itemNum[number] - 1][4], TextToSpeech.QUEUE_FLUSH, null);
+                        gradeNum.setText(Item.item[itemNum[number] - 1][4]);
                     }
                     number++;
                 } else {

@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Music extends AppCompatActivity {
-    ListView listPlay;
+    private ListView listPlay;
     private List<Map<String, String>> data;
     private MediaPlayer mediaPlayer;
 
@@ -31,7 +31,8 @@ public class Music extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music);
 
-        if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission(this,
+                android.Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.READ_EXTERNAL_STORAGE}, 0);
         } else {
             init();

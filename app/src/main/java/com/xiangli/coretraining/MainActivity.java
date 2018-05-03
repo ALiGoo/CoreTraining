@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     ImageButton humpBack;
     ImageButton waist;
     ImageButton tired;
+    Button music;
     Spinner spinner;
     public static int grade;
 
@@ -36,6 +38,13 @@ public class MainActivity extends AppCompatActivity {
         humpBack = findViewById(R.id.humpback);
         waist = findViewById(R.id.waist);
         tired = findViewById(R.id.tiredd);
+        music = findViewById(R.id.music);
+        music.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gotoMusic();
+            }
+        });
 
         setGrade();
 
@@ -200,5 +209,10 @@ public class MainActivity extends AppCompatActivity {
                 grade = 1;
             }
         });
+    }
+
+    public void gotoMusic(){
+        Intent intent = new Intent(this,Music.class);
+        startActivity(intent);
     }
 }
