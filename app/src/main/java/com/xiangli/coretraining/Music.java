@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 
 import java.io.File;
 import java.util.HashMap;
@@ -76,17 +77,17 @@ public class Music extends AppCompatActivity {
 
         Intent intent = new Intent(this, PlayMusicService.class);
         intent.putExtra("state", "play");
-        intent.putExtra("playnusic", "musicFile");
+        intent.putExtra("playmusic", musicFile);
         startService(intent);
     }
 
-    private void restartPlay(View view) {
+    public void restartPlay(View view) {
         Intent intent = new Intent(this, PlayMusicService.class);
         intent.putExtra("state", "restart");
         startService(intent);
     }
 
-    private void stopPlay(View view) {
+    public void stopPlay(View view) {
         Intent intent = new Intent(this, PlayMusicService.class);
         intent.putExtra("state", "stop");
         startService(intent);
@@ -97,15 +98,17 @@ public class Music extends AppCompatActivity {
         File[] files = musicDir.listFiles();
         MediaMetadataRetriever mmr = new MediaMetadataRetriever();
         for (File musicFile : files) {
-            mmr.setDataSource(musicFile.toString());
+            if (musicFile.isFile()) {
+                mmr.setDataSource(musicFile.toString());
 
-            String titleName = mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_TITLE);
-            String artistName = mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_ARTIST);
+                String titleName = mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_TITLE);
+                String artistName = mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_ARTIST);
 
-            HashMap<String, String> music = new HashMap<>();
-            music.put("title", titleName + "-" + artistName);
-            music.put("filename", musicFile.toString());
-            data.add(music);
+                HashMap<String, String> music = new HashMap<>();
+                music.put("title", titleName + "-" + artistName);
+                music.put("filename", musicFile.toString());
+                data.add(music);
+            }
         }
     }
 }

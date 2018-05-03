@@ -2,6 +2,10 @@ package com.xiangli.coretraining;
 
 import android.app.Service;
 import android.content.Intent;
+import android.os.IBinder;
+
+import android.app.Service;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
@@ -20,6 +24,7 @@ public class PlayMusicService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
+        mediaPlayer = new MediaPlayer();
     }
 
     @Override
@@ -27,7 +32,7 @@ public class PlayMusicService extends Service {
         String state = intent.getStringExtra("state");
         switch (state) {
             case "play":
-                playMusic(intent.getStringExtra("playnusic"));
+                playMusic(intent.getStringExtra("playmusic"));
                 break;
             case "restart":
                 restart();
@@ -41,7 +46,7 @@ public class PlayMusicService extends Service {
 
     private void playMusic(String musicFile) {
         if (musicFile == null) return;
-        if (musicFile != null) {
+        if (mediaPlayer != null) {
             if (mediaPlayer.isPlaying()) mediaPlayer.stop();
             mediaPlayer.release();
             mediaPlayer = null;
@@ -73,3 +78,4 @@ public class PlayMusicService extends Service {
         super.onDestroy();
     }
 }
+
