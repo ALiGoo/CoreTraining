@@ -64,13 +64,17 @@ public class TrainingProgram extends AppCompatActivity {
 
         for (int i = 0; i < itemName.length; i++) {
             itemName[i] = findViewById(itemId[i]);
+            String content;
             if (itemNum[i] != 0) {
                 if (MainActivity.grade == 1 || itemNum[i] <= 10) {
-                    itemName[i].setText(Item.item[itemNum[i] - 1][0] + "     " + Item.item[itemNum[i] - 1][2]);
+                    content = Item.item[itemNum[i] - 1][0] + "     " + Item.item[itemNum[i] - 1][2];
+                    itemName[i].setText(content);
                 } else if (MainActivity.grade == 2) {
-                    itemName[i].setText(Item.item[itemNum[i] - 1][0] + "     " + Item.item[itemNum[i] - 1][3]);
+                    content = Item.item[itemNum[i] - 1][0] + "     " + Item.item[itemNum[i] - 1][3];
+                    itemName[i].setText(content);
                 } else {
-                    itemName[i].setText(Item.item[itemNum[i] - 1][0] + "     " + Item.item[itemNum[i] - 1][4]);
+                    content = Item.item[itemNum[i] - 1][0] + "     " + Item.item[itemNum[i] - 1][4];
+                    itemName[i].setText(content);
                 }
 
             }

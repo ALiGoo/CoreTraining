@@ -3,11 +3,7 @@ package com.xiangli.coretraining;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
-
-import android.app.Service;
-import android.content.Intent;
 import android.media.MediaPlayer;
-import android.os.IBinder;
 import android.support.annotation.Nullable;
 
 import java.io.IOException;

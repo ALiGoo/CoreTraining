@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         lossWeight = findViewById(R.id.lossWeight);
         abdomen = findViewById(R.id.abdomen);
         body = findViewById(R.id.body);
@@ -45,9 +44,6 @@ public class MainActivity extends AppCompatActivity {
                 gotoMusic();
             }
         });
-
-
-        setGrade();
 
         lossWeight.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,6 +93,8 @@ public class MainActivity extends AppCompatActivity {
                 gotoTired(view);
             }
         });
+
+        setGrade();
     }
 
     public void gotoLossWeight(View view) {
@@ -190,7 +188,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void setGrade() {
         Spinner spinner = findViewById(R.id.spinner);
-
         ArrayAdapter adapter = ArrayAdapter.createFromResource(this, R.array.grade, R.layout.support_simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
