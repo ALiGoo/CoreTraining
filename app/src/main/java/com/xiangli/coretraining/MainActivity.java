@@ -9,7 +9,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         lossWeight = findViewById(R.id.lossWeight);
         abdomen = findViewById(R.id.abdomen);
         body = findViewById(R.id.body);
@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 gotoMusic();
             }
         });
+
 
         setGrade();
 
@@ -195,12 +196,16 @@ public class MainActivity extends AppCompatActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if (parent.getSelectedItem().toString().equals("初級")) {
-                    grade = 1;
-                } else if (parent.getSelectedItem().toString().equals("中級")) {
-                    grade = 2;
-                } else {
-                    grade = 3;
+                switch (parent.getSelectedItem().toString()) {
+                    case "初級":
+                        grade = 1;
+                        break;
+                    case "中級":
+                        grade = 2;
+                        break;
+                    case "高級":
+                        grade = 3;
+                        break;
                 }
             }
 
@@ -211,8 +216,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void gotoMusic(){
-        Intent intent = new Intent(this,Music.class);
+    public void gotoMusic() {
+        Intent intent = new Intent(this, Music.class);
         startActivity(intent);
     }
 }
