@@ -43,7 +43,8 @@ public class PlayMusicService extends Service {
     private void playMusic(String musicFile) {
         if (musicFile == null) return;
         if (mediaPlayer != null) {
-            if (mediaPlayer.isPlaying()) mediaPlayer.stop();
+            if (mediaPlayer.isPlaying())
+                mediaPlayer.stop();
             mediaPlayer.release();
             mediaPlayer = null;
         }

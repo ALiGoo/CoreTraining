@@ -11,22 +11,37 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity android:name=".Training" />
         <activity android:name=".TrainingProgram" />
-        <activity android:name=".Music" />
+        <activity
+            android:name=".Music"
+            android:parentActivityName=".HomePage" />
+
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".HomePage"></meta-data>
 
         <service
             android:name=".PlayMusicService"
             android:enabled="true"
             android:exported="true" />
 
+        <activity
+            android:name=".HomePage"
+            android:label="@string/title_activity_home_page"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".About">
+            android:parentActivityName=".HomePage"
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HomePage"></meta-data>
+        </activity>
     </application>
 
 </manifest>

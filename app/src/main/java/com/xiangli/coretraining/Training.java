@@ -71,7 +71,7 @@ public class Training extends AppCompatActivity {
     public void onStop() {
         super.onStop();
 
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, HomePage.class);
         startActivity(intent);
     }
 
@@ -87,11 +87,11 @@ public class Training extends AppCompatActivity {
                     gif.setImageResource(Item.gif[itemNum[number] - 1]);
                     name.setText(Item.item[itemNum[number] - 1][0]);
                     tts.stop();
-                    if (MainActivity.grade == 1 || itemNum[number] <= 10) {
+                    if (HomePage.grade == 1 || itemNum[number] <= 10) {
                         tts.speak(Item.item[itemNum[number] - 1][0] + Item.item[itemNum[number] - 1][1]
                                 + Item.item[itemNum[number] - 1][2], TextToSpeech.QUEUE_FLUSH, null);
                         gradeNum.setText(Item.item[itemNum[number] - 1][2]);
-                    } else if (MainActivity.grade == 2) {
+                    } else if (HomePage.grade == 2) {
                         tts.speak(Item.item[itemNum[number] - 1][0] + Item.item[itemNum[number] - 1][1] +
                                 Item.item[itemNum[number] - 1][3], TextToSpeech.QUEUE_FLUSH, null);
                         gradeNum.setText(Item.item[itemNum[number] - 1][3]);

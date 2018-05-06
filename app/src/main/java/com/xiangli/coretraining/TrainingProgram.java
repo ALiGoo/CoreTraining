@@ -66,10 +66,10 @@ public class TrainingProgram extends AppCompatActivity {
             itemName[i] = findViewById(itemId[i]);
             String content;
             if (itemNum[i] != 0) {
-                if (MainActivity.grade == 1 || itemNum[i] <= 10) {
+                if (HomePage.grade == 1 || itemNum[i] <= 10) {
                     content = Item.item[itemNum[i] - 1][0] + "     " + Item.item[itemNum[i] - 1][2];
                     itemName[i].setText(content);
-                } else if (MainActivity.grade == 2) {
+                } else if (HomePage.grade == 2) {
                     content = Item.item[itemNum[i] - 1][0] + "     " + Item.item[itemNum[i] - 1][3];
                     itemName[i].setText(content);
                 } else {
