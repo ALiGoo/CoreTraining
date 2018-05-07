@@ -19,7 +19,6 @@ import pl.droidsonroids.gif.GifImageView;
 public class Training extends AppCompatActivity {
 
     private TextToSpeech tts;
-    private ImageButton next;
     private GifImageView gif;
     private TextView name;
     private TextView gradeNum;
@@ -41,7 +40,7 @@ public class Training extends AppCompatActivity {
 
         gif = findViewById(R.id.gif);
         gif.setImageResource(Item.gif[itemNum[0] - 1]);
-        next = findViewById(R.id.next);
+        ImageButton next = findViewById(R.id.next);
         next.setOnClickListener(setListener(itemNum));
         name = findViewById(R.id.name);
         name.setText(Item.item[itemNum[0] - 1][0]);

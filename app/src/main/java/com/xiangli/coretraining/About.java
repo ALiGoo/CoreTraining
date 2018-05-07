@@ -12,6 +12,7 @@ public class About extends AppCompatActivity {
         setContentView(R.layout.activity_about);
 
         ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
         actionBar.setDisplayHomeAsUpEnabled(true);
     }
 }

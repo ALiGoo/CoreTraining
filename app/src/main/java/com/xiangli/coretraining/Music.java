@@ -3,7 +3,6 @@ package com.xiangli.coretraining;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.media.MediaMetadataRetriever;
-import android.media.MediaPlayer;
 import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -23,9 +22,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Music extends AppCompatActivity {
-    private ListView listPlay;
     private List<Map<String, String>> data;
-    private MediaPlayer mediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +30,7 @@ public class Music extends AppCompatActivity {
         setContentView(R.layout.activity_music);
 
         ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         if (ContextCompat.checkSelfPermission(this,
@@ -54,7 +52,7 @@ public class Music extends AppCompatActivity {
     }
 
     private void init() {
-        listPlay = findViewById(R.id.listplay);
+        ListView listPlay = findViewById(R.id.listplay);
 
         data = new LinkedList<>();
         readMusicList();

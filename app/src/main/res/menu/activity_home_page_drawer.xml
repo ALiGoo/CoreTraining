@@ -5,10 +5,6 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/alarm"
-            android:icon="@drawable/ic_access_alarm_black"
-            android:title="提醒" />
-        <item
             android:id="@+id/music"
             android:icon="@drawable/ic_audiotrack"
             android:title="Music" />

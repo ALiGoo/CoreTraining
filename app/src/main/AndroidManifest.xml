@@ -6,7 +6,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/fitnessicon"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -19,7 +19,9 @@
 
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
-            android:value=".HomePage"></meta-data>
+            android:value=".HomePage">
+
+        </meta-data>
 
         <service
             android:name=".PlayMusicService"
@@ -28,7 +30,7 @@
 
         <activity
             android:name=".HomePage"
-            android:label="@string/title_activity_home_page"
+            android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,7 +42,9 @@
             android:parentActivityName=".HomePage"
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".HomePage"></meta-data>
+                android:value=".HomePage">
+
+            </meta-data>
         </activity>
     </application>
 

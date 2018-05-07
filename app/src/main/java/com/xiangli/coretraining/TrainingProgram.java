@@ -39,12 +39,12 @@ public class TrainingProgram extends AppCompatActivity {
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                gotoTraining(view, itemNum);
+                gotoTraining(itemNum);
             }
         });
     }
 
-    public void gotoTraining(View view, int[] itemNum) {
+    public void gotoTraining(int[] itemNum) {
         tts.speak(Item.item[itemNum[0] - 1][0] + Item.item[itemNum[0] - 1][1] + Item.item[itemNum[0] - 1][2], TextToSpeech.QUEUE_FLUSH, null);
         Intent intent = new Intent(this, Training.class);
         intent.putExtra("itemNum", itemNum);
