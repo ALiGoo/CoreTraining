@@ -8,3 +8,5 @@
 此專案是發想自一本書，想法是是把書中的內容轉作為app，讓操作書中的內容時，能夠有一個自動的提示，
 
 不用記下有哪幾個動作，還有翻書查看動作做法。
+
+APK下載:https://drive.google.com/file/d/1emxFSPXiBj32i-UG5LjH7qPB5p9BnX-5/view?usp=sharing
